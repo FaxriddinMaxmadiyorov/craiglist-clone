@@ -1,0 +1,10 @@
+<% if @posts.empty? %>
+  <p><b>No posts</b></p>
+<% end %>
+
+<% @posts.each do |post| %>
+  <div class='category-post'>
+    <span class='post-date'><%= time_ago_in_words post.created_at %> ago</span>
+    <span class='post-title'><%= link_to post.title, post_path(post) %></span>
+  </div>
+<% end %>
